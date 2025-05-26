@@ -1,0 +1,225 @@
+/* Estilos Globales y Protons */
+
+/* ------------------- ------------------- Configuración ------------------- ------------------- */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+/* ------------------- ------------------- Variables ------------------- ------------------- */
+:root {
+
+    --header-h: 5rem;
+    /* altura del header y la navegación. */
+
+    --max-app-w: 2048px;
+    /* valor máximo del ancho total de la web */
+   
+    --max-contenido-w: 1480px;
+    /* valor máximo del ancho total del contenido */
+
+    --contenido-w: 96lvw;
+    /* valor máximo hasta donde llega el contenido por debajo del --max-contenido-w */
+
+    --global-p1: 1rem; 
+    --global-p2: 2rem;
+    /* padding de cards y sub secciones finales */
+
+
+    /* unidades de corte media q */
+
+    --mq-xs: 320px;
+    /* xs */
+    --mq-s: 420px;
+    /* s */
+    --mq-m: 768px;
+    /* m */
+    --mq-l: 1024px;
+    /* l */
+    --mq-xl: 1620px;
+    /* xl */
+
+    /* colores */
+
+    --color-max-black: rgb(0, 0, 0);
+    --color-max-white: rgb(255, 255, 255);
+
+    --color-blue-0: rgb(0, 31, 184);
+    --color-blue-1: rgb(74, 61, 255);
+
+    --gradient-blue-01: linear-gradient(45deg,rgba(0, 31, 184, 1) 0%, rgba(74, 61, 255, 1) 100%);
+
+    --color-gris0: rgb(33, 33, 33);
+    --color-gris1: rgb(65, 70, 88);
+
+    
+
+    --color-bg-body: rgb(246,246,255);
+
+
+}
+
+
+/* 
+
+modo oscuro
+
+@media (prefers-color-scheme: dark) {
+    :root {
+
+        --color-wb-0: rgb(255, 255, 255);
+        --color-wb-1: rgb(230, 230, 230);
+        --color-wb-2: rgb(200, 200, 200);
+        --color-wb-3: rgb(80, 80, 80);
+        --color-wb-4: rgb(40, 40, 40);
+        --color-wb-5: rgb(20, 20, 20);
+
+
+        --color-wb-0-80: rgba(255, 255, 255, 0.8);
+        --color-wb-0-60: rgba(255, 255, 255, 0.6);
+        --color-wb-0-40: rgba(255, 255, 255, 0.4);
+        --color-wb-0-16: rgba(255, 255, 255, 0.16);
+        --color-wb-4-90: rgba(40, 40, 40, 0.9);
+        --color-wb-5-60: rgba(20, 20, 20, 0.6);
+        --color-wb-5-80: rgba(20, 20, 20, 0.8);
+    }
+} */
+
+/* ------------------- ------------------- Fuentes ------------------- ------------------- */
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-VariableFont_wght.ttf') format('ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat-Italic';
+  src: url('/fonts/Montserrat-Italic-VariableFont_wght.ttf') format('ttf');
+  font-display: swap;
+}
+
+/* ------------------- ------------------- Estilos Generales ------------------- ------------------- */
+body {
+    background-color: var(--color-bg-body);
+    color: var(--color-gris0);
+    /* scroll-behavior: smooth; */
+    /* min-height: 100lvh; */
+    margin: 0;
+    padding: 0;
+    font-family:
+        "Montserrat",
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Open Sans",
+        "Helvetica Neue",
+        sans-serif;
+}
+
+/* ------------------- colores al seleccionar el texto ------------------- */
+
+::selection {
+    background-color: var(--color-blue-0);
+    color: var(--color-max-white);
+}
+
+/* ------------------- h1 .. h6 / p / img / a ------------------- */
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    text-wrap: balance;
+    margin-top: calc(0.4rem + 0.5vh);
+    margin-bottom: calc(0.8rem + 0.5vh);
+}
+
+h1,
+.h1 {
+    font-size: min(calc(2.2rem + 1.2vw),66px);
+}
+
+h2,
+.h2 {
+    font-size: min(calc(1.1rem + 0.9vw),40px);
+}
+
+h3,
+.h3 {
+    font-size: min(calc(1rem + 0.4vw),32px);
+}
+
+h4,
+.h4 {
+    font-size: min(calc(1rem + 0.2vw),20px);
+}
+
+h5,
+.h5 {
+    font-size: 1rem;
+}
+
+h6,
+.h6 {
+    font-size: 1rem;
+}
+
+.p-hero {
+    font-size: min(calc(1rem + 0.3vw),24px);
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-bottom: 1lh;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-wrap: pretty;
+}
+
+img {
+    vertical-align: top;
+    object-fit: cover;
+    width: 100%;
+}
+
+a {
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--color-gris0);
+}
+
+a:visited {
+    color: var(--color-gris0);
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+li {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+}

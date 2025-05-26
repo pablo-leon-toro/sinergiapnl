@@ -1,0 +1,107 @@
+---
+
+import LinkNav from "@components/atoms/LinkNav.astro"
+
+import { Image } from 'astro:assets';
+import logo_hor from '@assets/img/sinergia-pnl-isologo-hor.svg';
+---
+
+<header id="header-top" >
+    <div class="sub-container-header">
+
+        <Image class="sinergia-pnl-logo-hor" id="logo-scroll-top" src={logo_hor} alt="Sinergia PNL" />
+
+        <nav class="menu-principal">
+            <LinkNav href="#servicios" body="Servicios"/>
+            <LinkNav href="#nosotros" body="Nosotros"/>
+            <LinkNav href="#clientes" body="Clientes"/>
+            <LinkNav href="#contacto" body="Contacto"/>
+        </nav>
+
+    </div>
+
+</header>
+
+<style>
+    header {
+        cursor: default;
+        user-select: none;
+
+        width: 100%;
+        height: var(--header-h);
+        top: 0px;
+
+        background-color: rgba(255, 255, 255, 0.85);
+        color: var(--color-gris0);
+
+        z-index: 2;
+        overflow: hidden;
+        position: fixed;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.16);
+        backdrop-filter: blur(4px);
+    }
+
+    div.sub-container-header {
+        height: 100%;
+        max-width: var(--max-contenido-w);
+        width: var(--contenido-w);
+        margin: 0;
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .sinergia-pnl-logo-hor {
+        margin-left: .2rem;
+        width: calc(10rem + 1lvw);
+        object-fit: contain;
+        object-position: center;
+        transition: scale ease 400ms;
+        cursor: pointer;
+    }
+    .sinergia-pnl-logo-hor:hover {
+        scale: 1.06;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: space-between;
+        gap: min(calc(0.5rem + 0.5lvw), 2rem);
+    }
+
+    /* media q  */
+
+    @media (width < 620px) {
+        div.sub-container-header {
+            flex-direction: column;
+            gap: 0;
+        }
+
+        nav {
+            gap: 0px;
+        }
+
+        .sinergia-pnl-logo-hor {
+            margin-left: 0px;
+            width: 8rem;
+        }
+    }
+
+
+</style>
+
+<script>
+  document.getElementById('logo-scroll-top')?.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
+

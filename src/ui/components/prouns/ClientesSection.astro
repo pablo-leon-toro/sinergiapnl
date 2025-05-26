@@ -1,0 +1,80 @@
+---
+import ClienteCard from "@components/blocks/ClienteCard.astro";
+
+import perfilBarbara from "@assets/img/clientes/perfil-barbara-nunez.png";
+import perfilCarlos from "@assets/img/clientes/perfil-carlos-jofre.png";
+import perfilCarolina from "@assets/img/clientes/perfil-carolina-gomez.png";
+import perfilRodrigo from "@assets/img/clientes/perfil-rodrigo-lopez.png";
+---
+
+<section class="clientes" id="clientes">
+    <h1 class="titulo">Clientes</h1>
+
+    <div class="clientes-grid">
+
+        <ClienteCard
+            texto="Sebastián facilitó técnicas de PNL en talleres de comunicación efectiva para mapear perspectivas del equipo y construir consensos estratégicos. En un sector donde la colaboración define el éxito, su metodología priorizó la escucha activa y la síntesis de visiones dispares, claves para diseñar estrategias alineadas con nuestros objetivos de sostenibilidad. ¡Precisión y empatía en acción!"
+            nombre="Carlos Jofre"
+            cargo="CEO"
+            empresa="Ecoenergias"
+            imgPerfil={perfilCarlos.src}
+        />
+        <ClienteCard
+            texto="Sebastian optimizó nuestro proceso de ventas a través de estrategias de rapport, calibraje, escucha activa, asociación y disociación. En el contexto de la inmobiliaria, considerando lo consultivo del negocio, es fundamental contar con herramientas que nos ayuden a empatizar y entender las necesidades de nuestros clientes y darles las mejores soluciones en el tiempo oportuno."
+            nombre="Barbara Nuñez"
+            cargo="Jefe de Ventas"
+            empresa="Galilea Inmobiliaria"
+            imgPerfil={perfilBarbara.src}
+        />
+        <ClienteCard        
+            texto="Sebastián adaptó su metodología a nuestro rubro: con PNL facilitó la comunicación entre trabajadores de construcción y prevencionistas de riesgo. En un contexto donde la claridad es vital para la seguridad, su enfoque permitió alinear perspectivas técnicas y operativas, optimizando protocolos y reduciendo fricciones jerárquicas. Resultado: diálogo efectivo y gestión preventiva proactiva. ¡Estrategias que transforman realidades críticas!"
+            nombre="Rodrigo López"
+            cargo="Gerente Centro de Desarrollo Tecnológico"            
+            empresa="CCHC"
+            imgPerfil={perfilRodrigo.src}
+        />
+        <ClienteCard
+            texto="Sebastián transformó nuestra cultura con talleres de comunicación efectiva, liderazgo con programación neurolingüística y coaching ejecutivo. Sus metodologías potenciaron decisiones estratégicas, optimizaron procesos y fortalecieron equipos. Resultados: líderes empáticos, eficiencia operativa y alto desempeño. ¡Recomendado 100%!"
+            nombre="Carolina Gómez"
+            cargo="Gerente de Marketing"
+            empresa="MTK"
+            imgPerfil={perfilCarolina.src}
+        />
+
+    </div>
+
+</section>
+
+<style>
+    section.clientes {
+        color: var(--color-gris0);
+        cursor: default;
+        margin-top: 1rem;
+        padding: 2rem 0;
+        width: 100%;
+    }
+
+    .titulo {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: var(--color-gris1);
+    }
+    .clientes-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+    
+    @media (width < 1400px){
+        .clientes-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (width < 620px){
+        .clientes-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+</style>

@@ -1,0 +1,209 @@
+---
+import bgImagen1 from "@assets/img/nosotros/nos-img-01.png";
+import bgImagen2 from "@assets/img/nosotros/nos-img-02.png";
+import sebasImage from "@assets/img/nosotros/seba001.png";
+---
+
+<section class="nosotros" id="nosotros">
+    <h1 class="titulo">Nosotros</h1>
+
+    <div class="nosotros-superior" id="nosotros-superior">
+        <h3>
+            En un mundo donde el talento y la estrategia definen el éxito, somos
+            tu aliado estratégico en HeadHunting y Coaching Organizacional.
+        </h3>
+        <p>
+            Con experiencia en sectores clave (inmobiliarias, minería y SaaS)
+            potenciamos equipos mediante metodologías probadas: reclutamiento de
+            alto impacto, talleres de PNL aplicados a ventas, comunicación
+            efectiva y liderazgo adaptativo.
+        </p>
+    </div>
+
+    <div class="nosotros-grid">
+        <div
+            class="card-nosotros-grid nos-sebastian"
+            style={`--bg-seba: url(${sebasImage.src})`}
+        >
+            <h2>Sebastián Saez</h2>
+            <p>Coach & Headhunter</p>
+        </div>
+        <div class="card-nosotros-grid nos-txt1">
+            <p>
+                Transformamos vendedores en storytellers, optimizamos
+                colaboración en entornos exigentes y desarrollamos líderes
+                ágiles para empresas SaaS.
+            </p>
+        </div>
+
+        <div
+            class="card-nosotros-grid nos-img1"
+            style={`--bg-image1: url(${bgImagen1.src})`}
+        >
+        </div>
+
+        <div
+            class="card-nosotros-grid nos-img2"
+            style={`--bg-image2: url(${bgImagen2.src})`}
+        >
+        </div>
+
+        <div class="card-nosotros-grid nos-txt2">
+            <p>
+                No ofrecemos soluciones genéricas: analizamos tus desafíos
+                únicos y creamos estrategias *bespoke* con métricas tangibles
+                (productividad, retención, ventas). Somos el puente entre donde
+                estás y donde mereces estar.
+            </p>
+        </div>
+    </div>
+</section>
+
+<style>
+    p{
+        margin: 0;
+    }
+
+    .titulo {
+        text-align: center;
+        text-wrap: pretty;
+        margin-bottom: 2rem;
+        color: var(--color-gris1);
+    }
+
+    section.nosotros {
+        color: var(--color-gris0);
+        cursor: default;
+        margin-top: 1rem;
+        padding: 2rem 0;
+        width: 100%;
+    }
+
+    .nosotros-superior {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        background: var(--color-max-white);
+        padding: 2rem 2rem;
+
+        & h3 {
+            text-align: center;
+        }
+    }
+
+    .nosotros-grid {
+        display: grid;
+
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+    }
+
+    .card-nosotros-grid {
+        background: var(--color-max-white);
+        padding: 2rem 2rem;
+        min-height: 300px;
+    }
+
+    .nos-txt1,
+    .nos-txt2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-max-white);
+    }
+
+    .nos-txt1 {
+        background: var(--color-blue-1);
+        grid-column: 2 / 4;
+    }
+
+    .nos-txt2 {
+        background: var(--color-blue-0);
+        grid-column: span 2;
+    }
+
+    .nos-img1,
+    .nos-img2 {
+        background: var(--color-gris1);
+    }
+    .nos-img1 {
+        background-image: var(--bg-image1);
+        background-size: cover;
+        background-position: center;
+    }
+    .nos-img2 {
+        background-image: var(--bg-image2);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .nos-sebastian {
+        background-image: var(--bg-seba);
+        background-size: cover;
+        background-position: center;
+
+        grid-column-start: span 1;
+        grid-row-start: span 2;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        color: var(--color-blue-0);
+        text-align: center;
+
+        & h2 {
+            margin-bottom: 0.4rem;
+        }
+    }
+
+    @media (width < 1240px) {
+        .nosotros-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .nos-txt1 {
+            grid-column: span 1;
+        }
+        .nos-txt2 {
+            grid-column: span 1;
+        }
+    }
+
+    @media (width < 840px) {
+        .card-nosotros-grid {
+            min-height: 260px;
+            padding: 1.6rem 1.6rem;
+        }
+        .nosotros-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .nos-txt1 {
+            grid-column: span 1;
+        }
+        .nos-txt2 {
+            grid-column: span 1;
+        }
+    }
+
+    @media (width < 620px) {
+        .card-nosotros-grid {
+            min-height: 220px;
+            padding: 1.4rem 1.4rem;
+        }
+        .nosotros-grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: 4fr repeat(4, 3fr);
+        }
+
+        .nos-txt2 {
+            grid-row: 5 / 6;
+        }
+
+        .nos-img2 {
+            grid-row: 6 / 7;
+        }
+    }
+</style>

@@ -1,0 +1,44 @@
+---
+interface Props {
+	body: string;
+    href: string;
+}
+
+const { href = '/', body = 'Inicio'} = Astro.props;
+
+---
+
+<a class="btn-principal" href={href}>{body}</a>
+
+
+<style>
+
+.btn-principal {
+    cursor: pointer;
+    user-select: none;
+    display: inline-block;
+    width: max-content;
+    padding: 0.75rem 2rem;
+    color: var(--color-blue-0);
+    background: rgb(255, 255, 255);
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background ease 0.3s, color ease 0.3s;
+}
+.btn-principal:hover {
+    color: #ffffff;
+    background: #00000000;
+    outline: #fff solid 2px;
+}
+
+@media (width < 425px) {
+    .btn-principal {
+        border-radius: 4px;
+        font-size: .8rem;
+        padding: 0.5rem 1.5rem;
+    }
+
+}
+ 
+</style>

@@ -1,0 +1,25 @@
+---
+// Definición de tipos TypeScript
+interface Props {
+  height?: string;
+  background?: string;
+  marginBottom?: string;
+}
+
+// Destructuración con valores por defecto
+const { 
+  height = "1rem", 
+  background = "var(--color-blue-1)", 
+  marginBottom = "1rem" 
+} = Astro.props;
+---
+
+<div 
+  style={`height: ${height}; background: ${background}; margin-bottom: ${marginBottom};`}
+></div>
+
+<style>
+  div {
+    width: 100%;
+  }
+</style>

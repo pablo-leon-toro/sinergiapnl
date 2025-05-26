@@ -1,0 +1,106 @@
+---
+
+import BtnPrincipal from "@components/atoms/BtnPrincipal.astro";
+import { Image } from 'astro:assets';
+import logo_pri from '@assets/img/sinergia-pnl-isologo-pri.svg';
+
+---
+
+<section class="hero-section">
+    <div class="container-l">
+        <h1>Head Hunter & Coaching</h1>
+        <p class="p-hero">Impulsamos el Éxito Comercial de tu Empresa con Headhunting Estratégico y Coaching ejecutivo, gerencial y organizacional aplicando programación neurolingüística (PNL).</p>
+        <BtnPrincipal href="#contacto" body="Contáctanos" />
+
+    </div>
+    <div class="container-r">
+        <Image class="sinergia-pnl-logo-hero" id="logo-hero" src={logo_pri} alt="Sinergia PNL" />
+    </div>
+</section>
+
+<style>
+.hero-section {
+    overflow: hidden;
+    max-height: calc(90lvh - 7rem);
+    min-height: 480px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 0;    
+    text-align: left;
+    color: var(--color-max-white);
+    display: grid;
+
+    grid-template-columns: 3fr 2fr;
+    gap: 0;
+    align-content: center;
+}
+
+.container-l, .container-r {
+    max-width: 100%;  
+    max-height: 100%;
+    height: auto;
+}
+
+.container-l{
+    padding: var(--global-p2);
+    background: var(--color-blue-1);
+    background: var(--gradient-blue-01);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container-r {
+    overflow: hidden;
+    padding: var(--global-p1);
+    background: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sinergia-pnl-logo-hero {
+    object-fit: contain;
+    object-position: center;
+    width: calc(10rem + 12lvw);
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+}
+
+.hero-section h1 {
+    margin-bottom: 1rem;
+}
+p {
+    font-weight: 400;
+    margin-bottom: 3rem;
+}
+
+ @media (width < 1024px) {
+    .hero-section {
+        grid-template-columns: 4fr 3fr;
+    }
+}
+
+@media (width < 768px) {
+    .hero-section {
+        min-height: 680px;
+        margin-top: 1rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr 2fr;
+    }
+
+    p {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (width < 425px) {
+    .container-l{
+        padding: var(--global-p1);
+    }
+}
+
+
+</style>

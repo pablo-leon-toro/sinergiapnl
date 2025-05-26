@@ -1,0 +1,87 @@
+---
+import RectLine from "@components/atoms/RectLine.astro";
+---
+
+<section class="servicios" id="servicios">
+    <h1 class="titulo">Servicios</h1>
+
+    <div class="sub-servicios">
+        <div class="card-servicios">
+            <h2>HeadHunting Estratégico con PNL</h2>
+            <RectLine height="1rem" />
+            <p>
+                Nuestro servicio de headhunting va más allá de la búsqueda de
+                candidatos.
+            </p>
+            <p>
+                Utilizamos la programación neurolingüística (PNL) para
+                comprender las necesidades profundas de tu empresa y encontrar
+                profesionales que no solo tengan las habilidades técnicas, sino
+                que también encajen perfectamente con tu cultura y valores.
+            </p>
+        </div>
+
+        <div class="card-servicios">
+            <h2>Coaching Ejecutivo y Gerencial con PNL</h2>
+            <RectLine height="1rem" />
+            <p>
+                Nuestro coaching ejecutivo y gerencial con PNL está diseñado
+                para líderes que buscan alcanzar su máximo potencial.
+            </p>
+            <p>
+                Trabajamos en el desarrollo de habilidades clave, la superación
+                de creencias limitantes y la alineación con los objetivos de la
+                organización.
+            </p>
+        </div>
+
+        <div class="card-servicios">
+            <h2>Coaching Organizacional con PNL</h2>
+            <RectLine height="1rem" />
+            <p>
+                Nuestro coaching organizacional con PNL transforma la cultura y
+                dinámica de los equipos, creando un entorno de trabajo más
+                colaborativo, innovador y productivo.
+            </p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .titulo {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: var(--color-gris1);
+    }
+    section.servicios {
+        color: var(--color-gris0);
+        cursor: default;
+        margin-top: 1rem;
+        padding: 2rem 0;
+        width: 100%;
+    }
+
+    .sub-servicios {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .card-servicios {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 400px;
+
+        background: var(--color-max-white);
+        padding: 3rem 2rem;
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.16);
+        transition:
+            transform 0.3s,
+            box-shadow 0.3s;
+    }
+
+    .card-servicios:hover {
+        transform: translateY(-5px);
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.16);
+    }
+</style>

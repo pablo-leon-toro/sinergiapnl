@@ -1,0 +1,65 @@
+---
+import "@css/main-style.css"; // Estilos globales o Protons y Variables Globales
+
+import HeaderMenu from "@components/prouns/HeaderMenu.astro";  // Menu de cabezera
+import Line from "@components/atoms/Line.astro";	 // Linea de separacion
+
+import { ClientRouter } from "astro:transitions";
+import FooterPNL from "@components/prouns/FooterPNL.astro";
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/sinergia-pnl-favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="author" content="Pablo León Toro" />
+		<meta name="description" content="Sinergia PNL" />
+		<meta name="keywords" content="sinergia, pnl, coach" />
+		<ClientRouter />
+	</head>
+	<body>
+		<HeaderMenu/>
+		<main>
+			<slot>
+				<section class="slot-defecto">
+					<h1>{title}</h1>
+				</section>
+			</slot>
+		</main>
+	</body>
+</html>
+
+<style is:global>
+	
+
+	/* ------------------- main: slot general de todas las pages ------------------- */
+	
+	main {
+		width: var(--contenido-w);
+		max-width: var(--max-contenido-w);
+		margin: var(--header-h) auto 0 auto;
+		min-height: calc(100dvh - var(--header-h));
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 0px;
+	}
+
+	/* ------------------- Por defecto cuando no entra contenido al <slot> ------------------- */
+
+	section.slot-defecto {
+		text-align: center;
+	}
+</style>

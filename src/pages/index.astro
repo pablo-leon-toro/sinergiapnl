@@ -1,16 +1,28 @@
 ---
-
+import Layout from "@layouts/MainLayout.astro";
+import HeroSection from "@components/prouns/HeroSection.astro";
+import ServiciosSection from "@components/prouns/ServiciosSection.astro";
+import NosotrosSection from "@components/prouns/NosotrosSection.astro";
+import FooterPNL from "@components/prouns/FooterPNL.astro";
+import ClientesSection from "@components/prouns/ClientesSection.astro";
+import ContactoSection from "@components/prouns/ContactoSection.astro";
+import titulo from "@assets/data/titulo-principal.json"
+const tituloPrincipal = titulo[0];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title={tituloPrincipal}>
+
+	<HeroSection />
+	
+	<ServiciosSection />
+
+	<NosotrosSection />
+
+	<ClientesSection />
+
+	<ContactoSection />
+
+	<FooterPNL />
+{/* utilizar solo comentarios js, se omitiran en el DOM */}
+
+</Layout>
