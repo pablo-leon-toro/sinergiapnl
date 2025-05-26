@@ -102,11 +102,15 @@ modo oscuro
 }
 
 /* ------------------- ------------------- Estilos Generales ------------------- ------------------- */
+html {
+    scroll-behavior: smooth;
+    /* para que los enlaces ancla hagan scroll suave */
+    scroll-padding-top: calc(var(--header-h) - 1rem);
+}
+
 body {
     background-color: var(--color-bg-body);
     color: var(--color-gris0);
-    /* scroll-behavior: smooth; */
-    /* min-height: 100lvh; */
     margin: 0;
     padding: 0;
     font-family:
