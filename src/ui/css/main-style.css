@@ -89,7 +89,7 @@ modo oscuro
 
 /* ------------------- ------------------- Fuentes ------------------- ------------------- */
 
-@font-face {
+/* @font-face {
   font-family: 'Montserrat';
   src: url('/fonts/Montserrat-VariableFont_wght.ttf') format('ttf');
   font-display: swap;
@@ -99,7 +99,7 @@ modo oscuro
   font-family: 'Montserrat-Italic';
   src: url('/fonts/Montserrat-Italic-VariableFont_wght.ttf') format('ttf');
   font-display: swap;
-}
+} */
 
 /* ------------------- ------------------- Estilos Generales ------------------- ------------------- */
 html {
@@ -113,7 +113,7 @@ body {
     color: var(--color-gris0);
     margin: 0;
     padding: 0;
-    font-family:
+   /*  font-family:
         "Montserrat",
         system-ui,
         -apple-system,
@@ -125,7 +125,7 @@ body {
         Cantarell,
         "Open Sans",
         "Helvetica Neue",
-        sans-serif;
+        sans-serif; */
 }
 
 /* ------------------- colores al seleccionar el texto ------------------- */
